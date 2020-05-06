@@ -1,0 +1,36 @@
+openapi: 3.0.0
+info:
+  title: helloworld
+  version: '1.0'
+  description: Sample OpenAPI Spec.
+servers:
+  - url: 'http://localhost:3000'
+paths:
+  /api:
+    get:
+      summary: Your GET endpoint
+      tags: []
+      responses:
+        '200':
+          description: 'return "Hello, World!"'
+          headers:
+            Content-Type:
+              schema:
+                type: string
+              description: application/json;charset=UTF-8
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+              examples:
+                example-1:
+                  value:
+                    message: 'Hello, World!'
+      operationId: get-api
+      description: sample api
+      parameters: []
+components:
+  schemas: {}
