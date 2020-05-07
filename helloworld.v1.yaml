@@ -9,7 +9,8 @@ paths:
   /api:
     get:
       summary: Your GET endpoint
-      tags: []
+      tags:
+        - Sample
       responses:
         '200':
           description: 'return "Hello, World!"'
@@ -21,7 +22,17 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ResponseMessage'
+                title: ResponseMessage
+                type: object
+                properties:
+                  message:
+                    type: string
+                required:
+                  - message
+                x-examples:
+                  example-1:
+                    message: 'Hello, World?'
+                description: Sample API Response type
               examples:
                 example-ok:
                   value:
@@ -30,15 +41,9 @@ paths:
       description: sample api
       parameters: []
 components:
-  schemas:
-    ResponseMessage:
-      title: ResponseMessage
-      type: object
-      x-examples:
-        example-1:
-          message: 'Hello, World?'
-      properties:
-        message:
-          type: string
-      required:
-        - message
+  schemas: {}
+  securitySchemes: {}
+security: []
+tags:
+  - name: Sample
+    description: Sample API
