@@ -1,0 +1,11 @@
+title: ResponseMessage
+type: object
+properties:
+  message:
+    type: string
+required:
+  - message
+x-examples:
+  example-1:
+    message: 'Hello, World?'
+description: Sample API Response type
