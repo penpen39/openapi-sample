@@ -4,7 +4,7 @@ info:
   version: '1.0'
   description: Sample OpenAPI Spec.
 servers:
-  - url: 'http://localhost:3000'
+  - url: 'https://raw.githubusercontent.com/penpen39/openapi-sample/master'
 paths:
   /api:
     get:
@@ -22,17 +22,7 @@ paths:
           content:
             application/json:
               schema:
-                title: ResponseMessage
-                type: object
-                properties:
-                  message:
-                    type: string
-                required:
-                  - message
-                x-examples:
-                  example-1:
-                    message: 'Hello, World?'
-                description: Sample API Response type
+                $ref: 'https://raw.githubusercontent.com/penpen39/openapi-sample/master/ResponseMessage.v1.yaml'
               examples:
                 example-ok:
                   value:
@@ -43,7 +33,7 @@ paths:
 components:
   schemas: {}
   securitySchemes: {}
-security: []
 tags:
   - name: Sample
     description: Sample API
+security: []
