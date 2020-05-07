@@ -21,16 +21,24 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  message:
-                    type: string
+                $ref: '#/components/schemas/ResponseMessage'
               examples:
-                example-1:
+                example-ok:
                   value:
-                    message: 'Hello, World!!!'
+                    message: 'Hello, World!'
       operationId: get-api
       description: sample api
       parameters: []
 components:
-  schemas: {}
+  schemas:
+    ResponseMessage:
+      title: ResponseMessage
+      type: object
+      x-examples:
+        example-1:
+          message: 'Hello, World?'
+      properties:
+        message:
+          type: string
+      required:
+        - message
